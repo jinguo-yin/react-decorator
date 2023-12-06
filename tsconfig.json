@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "experimentalDecorators": true, //支持修饰器
+    "emitDecoratorMetadata": true, //支持修饰器
+    "target": "ESNext", // "es5",
     "lib": [
       "dom",
       "dom.iterable",
@@ -17,8 +19,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "noEmit": false, //true,
+    "jsx": "react-jsx",
+    "outDir": "./build"
   },
   "include": [
     "src"

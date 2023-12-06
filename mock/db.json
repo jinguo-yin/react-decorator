@@ -1,0 +1,39 @@
+{
+    "menus": {
+        "data": [
+            {
+                "scope": "homeController",
+                "title": "mainpage",
+                "decorator": "dashboard",
+                "path": "/",
+                "entity": "dashboard"
+            },
+            {
+                "scope": "homeController",
+                "title": "test",
+                "decorator": "test",
+                "path": "/test",
+                "entity": "Test"
+            },
+            {
+                "scope": "homeController",
+                "title": "my test",
+                "decorator": "myTest",
+                "path": "/myTest",
+                "entity": "myTest",
+                "props": [
+                    {
+                        "name": "liudehua"
+                    }
+                ]
+            },
+            {
+                "scope": "SecondController",
+                "title": "test",
+                "decorator": "second",
+                "path": "/second",
+                "entity": "TestPage"
+            }
+        ]
+    }
+}
