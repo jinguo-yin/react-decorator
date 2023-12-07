@@ -6,7 +6,6 @@ export const CLASS_HANDLE = 'class:handle';
 
 export function Controller(controllerName: string): ClassDecorator {    //Class Decorator
     return (_) => {
-        console.log('_', _, controllerName);
         Reflect.defineMetadata(CLASS_HANDLE, controllerName, _);
     }
 }
