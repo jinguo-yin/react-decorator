@@ -17,6 +17,7 @@ export interface ICompDesc {
     funcName: string;
     entity: ReactNode;
 }
+
 export let baseController: {scope: string, conroller: any}[] = [];
 export const compMap: ICompDesc[] = [];
 
@@ -50,6 +51,4 @@ export async function createBase({controllers}: Options) {
     
         baseController.push({scope: controllerName, conroller: controller})
     }
-
-    console.log('compMap', compMap);
 }

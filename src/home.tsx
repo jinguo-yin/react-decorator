@@ -5,6 +5,7 @@ import Dashboard from './Dashboard'
 
 @Controller('homeController')
 export class Home {
+    
     @MethodDec('test')
     Test(){
         return (
