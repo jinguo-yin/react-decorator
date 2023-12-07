@@ -29,6 +29,16 @@
                 "title": "test",
                 "decorator": "second",
                 "path": "/second"
+            },
+            {
+                "scope": "SecondController",
+                "title": "array function",
+                "decorator": "ArrowFunction",
+                "path": "/arrayfunction",
+                "props": [
+                    "yjg",
+                    54
+                ]
             }
         ]
     }

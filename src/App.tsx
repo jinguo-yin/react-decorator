@@ -5,7 +5,6 @@ import axios from 'axios';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { compMap, baseController } from './decorator/createbase';
 
-
 export interface RouteItem {
   title: string;
   path: string;
@@ -31,7 +30,6 @@ function App() {
       items.forEach(it => {
         const entities = compMap.filter(comp=> comp.decorator === it.decorator);
         if(entities.length > 0) {
-          console.log('entities: ', entities);
           if(it.props) {
             const id = baseController.findIndex(controller => controller.scope === it.scope);
             const funcName = entities[0].funcName;

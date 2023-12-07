@@ -13,9 +13,7 @@ const root = ReactDOM.createRoot(
 );
 const render = () => {
   root.render(
-    // <React.StrictMode>
       <App />
-    // </React.StrictMode>
   )
 };
 
@@ -23,7 +21,6 @@ reportWebVitals();
 
 async function bootstrap()
 {
-  
   await createBase(
     {
       controllers: [
