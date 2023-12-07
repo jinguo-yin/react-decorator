@@ -3,24 +3,21 @@
         "data": [
             {
                 "scope": "homeController",
-                "title": "mainpage",
+                "title": "dashboard",
                 "decorator": "dashboard",
-                "path": "/",
-                "entity": "dashboard"
+                "path": "/"
             },
             {
                 "scope": "homeController",
                 "title": "test",
                 "decorator": "test",
-                "path": "/test",
-                "entity": "Test"
+                "path": "/test"
             },
             {
                 "scope": "homeController",
                 "title": "my test",
                 "decorator": "myTest",
                 "path": "/myTest",
-                "entity": "myTest",
                 "props": [
                     {
                         "name": "liudehua"
@@ -31,8 +28,7 @@
                 "scope": "SecondController",
                 "title": "test",
                 "decorator": "second",
-                "path": "/second",
-                "entity": "TestPage"
+                "path": "/second"
             }
         ]
     }

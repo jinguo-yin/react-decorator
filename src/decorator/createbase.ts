@@ -12,8 +12,9 @@ export interface Options {
 export enum CompType  {'function', 'property'};
 
 export interface ICompDesc {
-    name: string;
+    decorator: string;
     type: CompType;
+    funcName: string;
     entity: ReactNode;
 }
 export let baseController: {scope: string, conroller: any}[] = [];
@@ -32,7 +33,7 @@ export async function createBase({controllers}: Options) {
         props.forEach(propName => {
             if(Reflect.getMetadata(PROPERTY_HANDLE, proto, propName)) {
                 const decoratorContent = Reflect.getMetadata(PROPERTY_HANDLE, proto, propName);
-                compMap.push({name: decoratorContent, type: CompType.property, entity: controller[propName]});
+                compMap.push({decorator: decoratorContent, type: CompType.property, funcName: propName, entity: controller[propName]});
             }
         })
       
@@ -43,10 +44,12 @@ export async function createBase({controllers}: Options) {
         funcs.forEach(funcName => {
             if(Reflect.getMetadata(METHOD_HANDLE, proto, funcName)){
                 const decoratorContent = Reflect.getMetadata(METHOD_HANDLE, proto, funcName);
-                compMap.push({name: decoratorContent, type: CompType.function, entity: controller[funcName]});
+                compMap.push({decorator: decoratorContent, type: CompType.function, funcName: funcName, entity: controller[funcName]});
             }
         })
-        
+    
         baseController.push({scope: controllerName, conroller: controller})
     }
+
+    console.log('compMap', compMap);
 }

@@ -17,7 +17,6 @@ export interface DataItem {
   title: string;
   decorator: string;
   path: string;
-  entity: string;
   props?: string;
 }
 
@@ -30,15 +29,18 @@ function App() {
 
       let temp: RouteItem[] = [];
       items.forEach(it => {
-        const entities = compMap.filter(comp=> comp.name === it.decorator);
+        const entities = compMap.filter(comp=> comp.decorator === it.decorator);
         if(entities.length > 0) {
+          console.log('entities: ', entities);
           if(it.props) {
             const id = baseController.findIndex(controller => controller.scope === it.scope);
-            const entity = baseController[id].conroller[it.decorator].apply(baseController[id].conroller, [...it.props]);
+            const funcName = entities[0].funcName;
+            const entity = baseController[id].conroller[funcName].apply(baseController[id].conroller, [...it.props]);
             temp.push({title: it.title, path: it.path, entity:entity});
           }else {
+            const funcName = entities[0].funcName;
             const id = baseController.findIndex(controller => controller.scope === it.scope);
-            const entity = baseController[id].conroller[it.entity].apply(baseController[id].conroller);
+            const entity = baseController[id].conroller[funcName].apply(baseController[id].conroller);
             temp.push({title: it.title, path: it.path, entity:entity});
           }
         }
