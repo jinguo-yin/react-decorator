@@ -26,3 +26,8 @@ export function PropertyDec(propertyName: string): PropertyDecorator {  //Proper
     }
 }
 
+export function FunctionDec(componentName: string): MethodDecorator {
+    return (target, propertyName) => {
+        console.log('target ', target, propertyName, componentName);
+    }
+}

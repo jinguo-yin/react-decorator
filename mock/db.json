@@ -11,7 +11,12 @@
                 "scope": "homeController",
                 "title": "test",
                 "decorator": "test",
-                "path": "/test"
+                "path": "/test",
+                "props": [
+                    {
+                        "action": "console.log('this is from test')"
+                    }
+                ]
             },
             {
                 "scope": "homeController",
@@ -20,7 +25,8 @@
                 "path": "/myTest",
                 "props": [
                     {
-                        "name": "liudehua"
+                        "name": "liudehua",
+                        "action": "console.log('hello'); display()"
                     }
                 ]
             },

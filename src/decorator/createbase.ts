@@ -18,13 +18,13 @@ export interface ICompDesc {
     entity: ReactNode;
 }
 
-export let baseController: {scope: string, conroller: any}[] = [];
+//global variant
+export const baseController: {scope: string, conroller: any}[] = [];
 export const compMap: ICompDesc[] = [];
 
 export async function createBase({controllers}: Options) {
     for(const controllerClass of controllers) {
         const controller = new controllerClass();
-
         const controllerName = Reflect.getMetadata(CLASS_HANDLE, controllerClass);
 
         const proto = controllerClass.prototype;

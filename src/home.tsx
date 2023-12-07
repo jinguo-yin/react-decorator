@@ -7,9 +7,9 @@ import Dashboard from './Dashboard'
 export class Home {
     
     @MethodDec('test')
-    Test(){
+    Test(action?: string){
         return (
-            <MyTest name = 'guanzhilin' />
+            <MyTest name = 'guanzhilin' action= {action} />
         )
     }
 

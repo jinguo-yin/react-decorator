@@ -30,22 +30,21 @@ function App() {
       items.forEach(it => {
         const entities = compMap.filter(comp=> comp.decorator === it.decorator);
         if(entities.length > 0) {
+          const id = baseController.findIndex(controller => controller.scope === it.scope);
+          const funcName = entities[0].funcName;
+
+          let entity = null;
           if(it.props) {
-            const id = baseController.findIndex(controller => controller.scope === it.scope);
-            const funcName = entities[0].funcName;
-            const entity = baseController[id].conroller[funcName].apply(baseController[id].conroller, [...it.props]);
-            temp.push({title: it.title, path: it.path, entity:entity});
+            entity = baseController[id].conroller[funcName].apply(baseController[id].conroller, [...it.props]);
           }else {
-            const funcName = entities[0].funcName;
-            const id = baseController.findIndex(controller => controller.scope === it.scope);
-            const entity = baseController[id].conroller[funcName].apply(baseController[id].conroller);
-            temp.push({title: it.title, path: it.path, entity:entity});
+            entity = baseController[id].conroller[funcName].apply(baseController[id].conroller);
           }
+
+          temp.push({title: it.title, path: it.path, entity:entity});
         }
       })
       
       setRoutes(temp);
-
     }).catch((err: any) => {
       throw Error(err);
     });
