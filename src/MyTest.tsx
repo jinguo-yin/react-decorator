@@ -41,7 +41,7 @@ const MyTest: React.FC<MyTestProps> = (props) => {
   return (
     <div>This is MyTest {props?.name}
       <button onClick={handleClick}>TestString</button>
-      <div dangerouslySetInnerHTML={{__html: '<div>This is from dangerouslySetInnerHTML1</div>'}} />
+      <div dangerouslySetInnerHTML={{__html: '<div>This is from dangerouslySetInnerHTML</div>'}} />
       <input type = 'text'></input>
     </div>
   )
