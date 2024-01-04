@@ -12,7 +12,7 @@ class Second {
 
     //箭头函数使用属性装饰器
     @PropertyDec('ArrowFunction')
-    fcPage = (name: string, age: number) => {
+    arrowFunctionPage = (name: string, age: number) => {
         return(
             <div>this is arrow function, must use Property Decorator {name} age: {age}</div>
         )

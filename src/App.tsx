@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import { compMap, baseController } from './decorator/createbase';
+import { compMap, baseController } from './decorator/componentInit';
 
 export interface RouteItem {
   title: string;
@@ -35,9 +35,9 @@ function App() {
 
           let entity = null;
           if(it.props) {
-            entity = baseController[id].conroller[funcName].apply(baseController[id].conroller, [...it.props]);
+            entity = baseController[id].controller[funcName].apply(baseController[id].controller, [...it.props]);
           }else {
-            entity = baseController[id].conroller[funcName].apply(baseController[id].conroller);
+            entity = baseController[id].controller[funcName].apply(baseController[id].controller);
           }
 
           temp.push({title: it.title, path: it.path, entity:entity});
@@ -53,9 +53,14 @@ function App() {
 
   if(routes.length === 0) return null;
   
+  const handleClick = () => {
+    console.log('baseController is: ', baseController);
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
+        <button onClick={handleClick}>测试</button>
         {
           routes.map((it, idx) =>{
             return (

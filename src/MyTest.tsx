@@ -1,6 +1,6 @@
 /* eslint-disable no-new-func */
 import React from 'react'
-import * as acorn from 'acorn';
+// import * as acorn from 'acorn';
 
 export interface MyTestProps {
   name?: string;
@@ -24,14 +24,14 @@ const MyTest: React.FC<MyTestProps> = (props) => {
       return 1;
     `;
 
-    let script = null; 
-    try{
-      script = acorn.parse(str,  {ecmaVersion: 'latest', allowReturnOutsideFunction: true});
-    }catch (err: any) {
-      console.log('err: ', err);
-    }
+    // let script = null; 
+    // try{
+    //   script = acorn.parse(str,  {ecmaVersion: 'latest', allowReturnOutsideFunction: true});
+    // }catch (err: any) {
+    //   console.log('err: ', err);
+    // }
 
-    console.log('script: ', script);
+    // console.log('script: ', script);
 
     const func = new Function('env',str);
     const result = func({hello: hello, display: display});

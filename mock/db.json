@@ -9,7 +9,7 @@
             },
             {
                 "scope": "homeController",
-                "title": "test",
+                "title": "homeController1",
                 "decorator": "test",
                 "path": "/test",
                 "props": [
@@ -20,7 +20,7 @@
             },
             {
                 "scope": "homeController",
-                "title": "my test",
+                "title": "homeController",
                 "decorator": "myTest",
                 "path": "/myTest",
                 "props": [
@@ -32,13 +32,13 @@
             },
             {
                 "scope": "SecondController",
-                "title": "test",
+                "title": "SecondController",
                 "decorator": "second",
                 "path": "/second"
             },
             {
                 "scope": "SecondController",
-                "title": "array function",
+                "title": "SecondController1",
                 "decorator": "ArrowFunction",
                 "path": "/arrayfunction",
                 "props": [
