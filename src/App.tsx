@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { compMap, baseController } from './decorator/componentInit';
+import { CLASS_HANDLE } from './decorator/decorator';
 
 export interface RouteItem {
   title: string;
@@ -21,11 +22,9 @@ export interface DataItem {
 
 function App() {
   const [routes, setRoutes] = useState<RouteItem[]>([]);
-
   useEffect(() => {
     axios('/mock/menus').then(res => {
       const items: DataItem[] = res.data.data;;
-
       let temp: RouteItem[] = [];
       items.forEach(it => {
         const entities = compMap.filter(comp=> comp.decorator === it.decorator);
@@ -45,16 +44,24 @@ function App() {
       })
       
       setRoutes(temp);
-    }).catch((err: any) => {
-      throw Error(err);
     });
   
-  }, []);
+  }, [setRoutes]);
 
   if(routes.length === 0) return null;
   
-  const handleClick = () => {
-    console.log('baseController is: ', baseController);
+  const handleClick = async () => {
+        // const str = " var moduleExports = import('http://localhost:8800/test.js');  console.log('moduleExports', moduleExports); return moduleExports";
+        // // eslint-disable-next-line no-new-func
+        // const fun = new Function('env', str);
+        //  await fun({jsstr: 'dync.js', require: require});
+        // // eslint-disable-next-line no-eval
+        // const result =  await eval("import('http://localhost:8800/test.js')");
+        // const resultString = Object.prototype.toString.call(result);
+        // console.log('result: ', result, resultString);
+        // const test = await import('./dync');
+        
+        // console.log('test', test);
   }
 
   return (

@@ -22,7 +22,8 @@ export const baseController: {scope: string, controller: any}[] = [];
 export const compMap: ICompDesc[] = [];
 
 export async function componentInit({controllers}: Options) {
-    for(const controllerClass of controllers) {
+    for(const controllerClass of controllers) {         //封装组件的Class，由于箭头函数不支持类装饰器，所以使用Class封装
+
         const controller = new controllerClass();
         const controllerName = Reflect.getMetadata(CLASS_HANDLE, controllerClass);
 

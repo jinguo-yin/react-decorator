@@ -16,7 +16,7 @@ export function MethodDec(componentName: string): MethodDecorator {        //Fun
     }
 }
 
-export function PropertyDec(propertyName: string): PropertyDecorator {  //Property Decorator
+export function PropertyDec(propertyName: string): PropertyDecorator {  //Property and arrow functional Decorator
     if(!propertyName) {
         throw new Error('inject name is required');
     }
@@ -26,8 +26,4 @@ export function PropertyDec(propertyName: string): PropertyDecorator {  //Proper
     }
 }
 
-export function FunctionDec(componentName: string): MethodDecorator {
-    return (target, propertyName) => {
-        console.log('target ', target, propertyName, componentName);
-    }
-}
+

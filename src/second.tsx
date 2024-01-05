@@ -17,7 +17,6 @@ class Second {
             <div>this is arrow function, must use Property Decorator {name} age: {age}</div>
         )
     }
-
 }
 
 export default Second
