@@ -54,11 +54,15 @@ function App() {
         // const str = " var moduleExports = import('http://localhost:8800/test.js');  console.log('moduleExports', moduleExports); return moduleExports";
         // // eslint-disable-next-line no-new-func
         // const fun = new Function('env', str);
-        //  await fun({jsstr: 'dync.js', require: require});
+        // const funMod = await fun({jsstr: 'dync.js', require: require});
+        // console.log('funMod', funMod);
         // // eslint-disable-next-line no-eval
-        // const result =  await eval("import('http://localhost:8800/test.js')");
+        // // const result =  await eval("import('http://localhost:8800/test.js')");
+        // let result;
+        // await eval("result = __webpack_require__.e('995')");
         // const resultString = Object.prototype.toString.call(result);
-        // console.log('result: ', result, resultString);
+        // const ddd = await result;
+        // console.log('result: ', ddd,  resultString);
         // const test = await import('./dync');
         
         // console.log('test', test);
