@@ -1,8 +1,12 @@
 import React from 'react'
 
+
+
 const Dashboard: React.FC<{}> = () => {
   return (
-    <div>Dashboard</div>
+    <div>
+      <div>Test WebAssembly</div>
+    </div>
   )
 }
 

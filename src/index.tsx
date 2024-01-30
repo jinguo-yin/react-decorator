@@ -8,13 +8,15 @@ import YAML from 'yaml';
 import { componentInit } from './decorator/componentInit';
 import { Home } from './home';
 import Second from './second';
+import EmApp from './EmApp';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 const render = () => {
   root.render(
-      <App />
+      // <App />
+      <EmApp />
   )
 };
 
@@ -60,12 +62,6 @@ async function bootstrap()
       ]
     }
   )
-
-
-
-
-
-
 
   render();
 }
