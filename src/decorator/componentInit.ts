@@ -37,7 +37,7 @@ export async function componentInit({controllers}: Options) {
                 compMap.push({decorator: decoratorContent, type: CompType.property, funcName: propName, entity: controller[propName]});
             }
         })
-      
+    
         const funcs = Object.getOwnPropertyNames(proto).filter(     //function use Inject
             item => typeof controller[item] === 'function' && item !== 'constructor'
         );

@@ -13,10 +13,11 @@ import EmApp from './EmApp';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 const render = () => {
   root.render(
-      // <App />
-      <EmApp />
+      <App />
+      // <EmApp />
   )
 };
 
@@ -66,4 +67,4 @@ async function bootstrap()
   render();
 }
 
-bootstrap();
+await bootstrap();
